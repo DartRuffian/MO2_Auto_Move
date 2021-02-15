@@ -24,7 +24,7 @@ class Main():
                 }
                 json.dump(default_settings, f, indent=2)
             
-        print("No settings were detected for auto_move.exe, default settings created and loaded. \nYou can edit your settings in the 'auto_move_settings.json' file.")
+            print("No settings were detected for auto_move.exe, default settings created and loaded. \nYou can edit your settings in the 'auto_move_settings.json' file.")
         
         with open("auto_move_settings.json", "r") as f:
             return json.load(f)
