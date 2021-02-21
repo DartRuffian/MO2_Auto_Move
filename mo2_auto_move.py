@@ -75,7 +75,10 @@ class Main():
             print(f"Currently Moving: {file}")
             for extension in EXTENSIONS:
                 if file.endswith(extension):
-                    shutil.move(rf"{self.modDirectories['downloadFolder']}\{file}", f"{self.modDirectories['MO2Folder']}\{self.game}\downloads")
+                    try:
+                        shutil.move(rf"{self.modDirectories['downloadFolder']}\{file}", f"{self.modDirectories['MO2Folder']}\{self.game}\downloads")
+                    except shutil.Error as e:
+                        print(f"It seems that the file {file} is already present in {self.modDirectories['MO2Folder']}\{self.game}\downloads. \nFull Error: \n{e}")
         print(">> All archives moved! <<")
 
 
